@@ -7,7 +7,7 @@ browser = webdriver.Chrome()
 
 # Translates from ESPN to GameSim
 def autoCorrect(name):
-    abbreviationExceptions = {'W.': 'Western', 'E.': 'Eastern', 'N.C. A&T': 'North Carolina A&T', 'UConn': 'Connecticut', 'UNCG': 'UNC Greensboro', 'UCSB': 'UC Santa Barbara'}
+    abbreviationExceptions = {'W.': 'Western', 'E.': 'Eastern', 'Louisiana St.': 'LSU', 'N.C. A&T': 'North Carolina A&T', 'UConn': 'Connecticut', 'UNCG': 'UNC Greensboro', 'UCSB': 'UC Santa Barbara'}
     for key in abbreviationExceptions:
         if key in name:
             name = name.replace(key, abbreviationExceptions[key])
@@ -51,7 +51,6 @@ def roundSim(roundTeams: list):
         else:
             advancingTeams.append(roundResults[gameCounter][2])
         gameCounter += 1
-    print(advancingTeams)
 
     # Creates List of teams' scores
     roundScores = []
@@ -104,8 +103,6 @@ finalists, finalFourScores = roundSim(finalFourTeams)
 
 # Simulate Championship
 champions, championshipScores = roundSim(finalists)
-
-print(champions[0], " are the Champions of the 2021 NCAA Tournament!!")
 
 # End Program
 browser.quit()

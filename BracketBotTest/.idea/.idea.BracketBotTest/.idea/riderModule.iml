@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/Mono.Cecil.Mdb.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/Mono.Cecil.Pdb.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/Mono.Cecil.Rocks.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/Mono.Cecil.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/NUnit.VisualStudio.TestAdapter.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/nunit.core.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/nunit.core.interfaces.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/nunittestadapter/2.3.0/build/nunit.util.dll" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
