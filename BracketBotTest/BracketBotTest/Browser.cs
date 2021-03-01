@@ -85,8 +85,8 @@ namespace BracketBotTest
             return (homeTeam, homeScore, awayTeam, awayScore);
         }
         
-        // Simulates next round and returns advancing teams
-        private (List<string>, List<int>) RoundSim(List<string> roundTeams)
+        // Simulates next round and returns tuple of advancing teams and Round scores
+        public (List<string>, List<int>) RoundSim(List<string> roundTeams)
         {
             // Simulates Round
             var roundResults = new List<(string, int, string, int)>();
@@ -123,52 +123,6 @@ namespace BracketBotTest
         public void Close()
         {
             browser.Close();
-        }
-
-        // Simulates First Four
-        public List<string> SimulateFirstFour(List<string> allTeams)
-        {
-            // Simulates First Four
-            var firstFourTeams = allTeams.Take(8).ToList();
-            var (firstFourWinners, firstFourScores) = RoundSim(firstFourTeams);
-
-            // Eliminates First Four duplicates
-            var firstRoundTeams = allTeams.Skip(8).ToList();
-
-            // Inserts First Four Winners
-            int replaceCounter = 0;
-            for (int i = 0; i < firstRoundTeams.Count; i++)
-            {
-                if (firstRoundTeams[i].Contains('/'))
-                {
-                    firstRoundTeams.Add(firstFourWinners[replaceCounter]);
-                    replaceCounter++;
-                }
-            }
-
-            return firstRoundTeams;
-        }
-
-        // Simulates Rest of Tournament
-        public void SimulateTournament(List<string> firstRoundTeams)
-        {
-            // Simulate First Round
-            var (secondRoundTeams, firstRoundScores) = RoundSim(firstRoundTeams);
-
-            // Simulate Second Round
-            var (sweetSixteenTeams, secondRoundScores) = RoundSim(secondRoundTeams);
-
-            // Simulate Sweet 16
-            var(eliteEightTeams, sweetSixteenScores) = RoundSim(sweetSixteenTeams);
-
-            // Simulate Elite 8
-            var (finalFourTeams, eliteEightScores) = RoundSim(eliteEightTeams);
-
-            // Simulate Final Four
-            var (finalists, finalFourScores) = RoundSim(finalFourTeams);
-
-            // Simulate Championship
-            var(champions, championshipScores) = RoundSim(finalists);
         }
     }
 }
